@@ -1,0 +1,6 @@
+[
+{ 
+	"keys": ["cmd+shift+alt+>"],
+	"command": "example"
+}
+]

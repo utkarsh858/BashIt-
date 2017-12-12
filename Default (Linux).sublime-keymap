@@ -1,0 +1,10 @@
+[
+{ 
+	"keys": ["shift+alt+:"],
+	"command": "add"
+},
+{ 
+	"keys": ["shift+alt+"],
+	"command": "commit"
+}
+]

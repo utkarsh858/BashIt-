@@ -1,0 +1,17 @@
+[{
+	"id":"tools",
+	"caption":"Tools",
+	"children":
+	[{
+		"caption":"BashIt!",
+		"children":[{
+			"caption":"git add -A",
+			"command":"add"
+		},
+		{
+			"caption":"git commit -m",
+			"command":"commit"
+		}]
+		
+	}]
+}]
