@@ -2,7 +2,8 @@
 	"id":"tools",
 	"caption":"Tools",
 	"children":
-	[{
+	[
+		{
 		"caption":"BashIt!",
 		"children":[{
 			"caption":"git add -A",
@@ -11,7 +12,33 @@
 		{
 			"caption":"git commit -m",
 			"command":"commit"
-		}]
+		},
+		{
+			"caption":"git init",
+			"command":"init"
+		},
+		{
+			"caption":"git remote add",
+			"command":"radd"
+		},
+		{
+			"caption":"git pull",
+			"command":"pull"
+		},
+		{
+			"caption":"git push",
+			"command":"push"
+		},
+		{
+			"caption":"git checkout",
+			"command":"checkout"
+		},
+		{
+			"caption":"git checkout -b",
+			"command":"checkoutb"
+		}
+
+	]
 		
 	}]
 }]
