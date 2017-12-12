@@ -62,7 +62,7 @@ class CheckoutCommand(sublime_plugin.TextCommand):
 		return
 
 	def on_done(self,string):
-		CommitCommand.branch=string
+		CheckoutCommand.branch=string
 		os.chdir(self.currentDir)		
 
 		bashCommand = "git checkout "+self.branch
@@ -73,7 +73,7 @@ class CheckoutCommand(sublime_plugin.TextCommand):
 
 	def run(self, edit):
 		currentWindow = self.view.window()
-		CommitCommand.currentDir = currentWindow.folders()[0]
+		CheckoutCommand.currentDir = currentWindow.folders()[0]
 		currentWindow.show_input_panel("Commit message","Minor changes", self.on_done,self.on_change, self.on_cancel)
 
 class CheckoutbCommand(sublime_plugin.TextCommand):
@@ -84,7 +84,7 @@ class CheckoutbCommand(sublime_plugin.TextCommand):
 		return
 
 	def on_done(self,string):
-		CommitCommand.branch=string
+		CheckoutbCommand.branch=string
 		os.chdir(self.currentDir)		
 
 		bashCommand = "git checkout -b "+self.branch
@@ -95,7 +95,7 @@ class CheckoutbCommand(sublime_plugin.TextCommand):
 
 	def run(self, edit):
 		currentWindow = self.view.window()
-		CommitCommand.currentDir = currentWindow.folders()[0]
+		CheckoutbCommand.currentDir = currentWindow.folders()[0]
 		currentWindow.show_input_panel("Commit message","Minor changes", self.on_done,self.on_change, self.on_cancel)
 
 
@@ -108,12 +108,12 @@ class RaddCommand(sublime_plugin.TextCommand):
 		return
 
 	def on_done(self,string):
-		CommitCommand.remotename=string
+		RaddCommand.remotename=string
 		os.chdir(self.currentDir)		
 		currentWindow.show_input_panel("URL of remote","Minor changes", self.on_done2,self.on_change, self.on_cancel)
 
 	def on_done2(self,string):
-		CommitCommand.url=string
+		RaddCommand.url=string
 		bashCommand = "git remote add "+self.remotename+" "+self.url
 		process = os.system(bashCommand)
 
@@ -123,7 +123,7 @@ class RaddCommand(sublime_plugin.TextCommand):
 
 	def run(self, edit):
 		currentWindow = self.view.window()
-		CommitCommand.currentDir = currentWindow.folders()[0]
+		RaddCommand.currentDir = currentWindow.folders()[0]
 		currentWindow.show_input_panel("Remote name","Minor changes", self.on_done,self.on_change, self.on_cancel)
 
 
@@ -136,12 +136,12 @@ class PushCommand(sublime_plugin.TextCommand):
 		return
 
 	def on_done(self,string):
-		CommitCommand.remotename=string
+		PushCommand.remotename=string
 		os.chdir(self.currentDir)		
 		currentWindow.show_input_panel("branch","Minor changes", self.on_done2,self.on_change, self.on_cancel)
 
 	def on_done2(self,string):
-		CommitCommand.branch=string
+		PushCommand.branch=string
 		bashCommand = "git push "+self.remotename+" "+self.branch
 		process = os.system(bashCommand)
 
@@ -151,7 +151,7 @@ class PushCommand(sublime_plugin.TextCommand):
 
 	def run(self, edit):
 		currentWindow = self.view.window()
-		CommitCommand.currentDir = currentWindow.folders()[0]
+		PushCommand.currentDir = currentWindow.folders()[0]
 		currentWindow.show_input_panel("Remote name","Minor changes", self.on_done,self.on_change, self.on_cancel)
 
 
