@@ -103,6 +103,7 @@ class RaddCommand(sublime_plugin.TextCommand):
 	remotename ="first"
 	url ="first"
 	currentDir=""
+	currentWindow=None
 
 	def on_change(self,string):
 		return
@@ -110,7 +111,7 @@ class RaddCommand(sublime_plugin.TextCommand):
 	def on_done(self,string):
 		RaddCommand.remotename=string
 		os.chdir(self.currentDir)		
-		currentWindow.show_input_panel("URL of remote","Minor changes", self.on_done2,self.on_change, self.on_cancel)
+		self.currentWindow.show_input_panel("URL of remote","http://github.com/", self.on_done2,self.on_change, self.on_cancel)
 
 	def on_done2(self,string):
 		RaddCommand.url=string
@@ -122,15 +123,16 @@ class RaddCommand(sublime_plugin.TextCommand):
 		exit()
 
 	def run(self, edit):
-		currentWindow = self.view.window()
-		RaddCommand.currentDir = currentWindow.folders()[0]
-		currentWindow.show_input_panel("Remote name","Minor changes", self.on_done,self.on_change, self.on_cancel)
+		RaddCommand.currentWindow = self.view.window()
+		RaddCommand.currentDir = self.currentWindow.folders()[0]
+		self.currentWindow.show_input_panel("Remote name","origin", self.on_done,self.on_change, self.on_cancel)
 
 
 class PushCommand(sublime_plugin.TextCommand):
 	remotename ="first"
 	branch ="first"
 	currentDir=""
+	currentWindow=None
 
 	def on_change(self,string):
 		return
@@ -138,7 +140,7 @@ class PushCommand(sublime_plugin.TextCommand):
 	def on_done(self,string):
 		PushCommand.remotename=string
 		os.chdir(self.currentDir)		
-		currentWindow.show_input_panel("branch","Minor changes", self.on_done2,self.on_change, self.on_cancel)
+		self.currentWindow.show_input_panel("branch","master", self.on_done2,self.on_change, self.on_cancel)
 
 	def on_done2(self,string):
 		PushCommand.branch=string
@@ -150,8 +152,8 @@ class PushCommand(sublime_plugin.TextCommand):
 		exit()
 
 	def run(self, edit):
-		currentWindow = self.view.window()
-		PushCommand.currentDir = currentWindow.folders()[0]
-		currentWindow.show_input_panel("Remote name","Minor changes", self.on_done,self.on_change, self.on_cancel)
+		PushCommand.currentWindow = self.view.window()
+		PushCommand.currentDir = self.currentWindow.folders()[0]
+		self.currentWindow.show_input_panel("Remote name","origin", self.on_done,self.on_change, self.on_cancel)
 
 
