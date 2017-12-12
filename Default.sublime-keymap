@@ -1,6 +1,10 @@
 [
 { 
-	"keys": ["cmd+shift+alt+>"],
-	"command": "example"
+	"keys": ["shift+alt+:"],
+	"command": "add"
+},
+{ 
+	"keys": ["shift+alt+|"],
+	"command": "commit"
 }
 ]

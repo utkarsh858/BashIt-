@@ -4,7 +4,7 @@
 	"command": "add"
 },
 { 
-	"keys": ["shift+alt+"],
+	"keys": ["shift+alt+|"],
 	"command": "commit"
 }
 ]
