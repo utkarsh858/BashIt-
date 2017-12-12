@@ -1,10 +1,35 @@
 [
 { 
-	"keys": ["shift+alt+:"],
+	"keys": ["m+alt+a"],
 	"command": "add"
 },
 { 
-	"keys": ["shift+alt+|"],
+	"keys": ["m+alt+c"],
 	"command": "commit"
+},
+{ 
+	"keys": ["m+alt+i"],
+	"command": "init"
+},
+{ 
+	"keys": ["m+alt+r"],
+	"command": "radd"
+},
+{ 
+	"keys": ["m+alt+p"],
+	"command": "pull"
+},
+{ 
+	"keys": ["m+alt+l"],
+	"command": "push"
+},
+{ 
+	"keys": ["m+alt+b"],
+	"command": "checkout"
+},
+{ 
+	"keys": ["m+alt+z"],
+	"command": "checkoutb"
 }
+
 ]
