@@ -10,8 +10,7 @@ class AddCommand(sublime_plugin.TextCommand):
 		os.chdir(currentDir)		
 		bashCommand = "git add -A"
 		process = os.system(bashCommand)
-		bashCommand = "mkdir pop"
-		os.system(bashCommand)
+
 		
 class InitCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
