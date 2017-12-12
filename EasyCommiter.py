@@ -138,7 +138,7 @@ class PushCommand(sublime_plugin.TextCommand):
 	def on_done(self,string):
 		CommitCommand.remotename=string
 		os.chdir(self.currentDir)		
-		currentWindow.show_input_panel("Commit message","Minor changes", self.on_done2,self.on_change, self.on_cancel)
+		currentWindow.show_input_panel("branch","Minor changes", self.on_done2,self.on_change, self.on_cancel)
 
 	def on_done2(self,string):
 		CommitCommand.branch=string
@@ -152,6 +152,6 @@ class PushCommand(sublime_plugin.TextCommand):
 	def run(self, edit):
 		currentWindow = self.view.window()
 		CommitCommand.currentDir = currentWindow.folders()[0]
-		currentWindow.show_input_panel("Commit message","Minor changes", self.on_done,self.on_change, self.on_cancel)
+		currentWindow.show_input_panel("Remote name","Minor changes", self.on_done,self.on_change, self.on_cancel)
 
 
